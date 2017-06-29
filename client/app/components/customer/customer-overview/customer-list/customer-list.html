@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-striped">
     <thead>
       <tr>
         <th>First Name</th>
@@ -15,6 +15,11 @@
         <td> {{customer.birthday}} </td>
         <td ng-if="customer.gender == 'm'">Male</td>
         <td ng-if="customer.gender == 'w'">Female</td>
+        <td>
+          <button type="button" class="btn btn-primary"> Edit</button>
+          <button type="button" class="btn btn-primary"> Delete</button>
+          <button type="button" class="btn btn-success"> Nav</button>
+        </td>
       </tr>
     </tbody>
   </table>
