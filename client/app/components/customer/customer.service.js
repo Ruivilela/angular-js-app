@@ -3,7 +3,7 @@ export default class CustomerService {
     this.$http = $http
   }
 
-  getCostumer() {
+  getCustomer() {
     return this.$http.get('http://localhost:8000/api/Customers')
   }
 }
