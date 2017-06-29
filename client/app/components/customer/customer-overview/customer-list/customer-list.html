@@ -16,9 +16,9 @@
         <td ng-if="customer.gender == 'm'">Male</td>
         <td ng-if="customer.gender == 'w'">Female</td>
         <td>
-          <button type="button" class="btn btn-primary"> Edit</button>
+          <button ng-click="editCustomer()" type="button" class="btn btn-primary"> Edit</button>
           <button type="button" class="btn btn-primary"> Delete</button>
-          <button type="button" class="btn btn-success"> Nav</button>
+          <button ng-click="goNavigationData()" type="button" class="btn btn-success"> Nav</button>
         </td>
       </tr>
     </tbody>

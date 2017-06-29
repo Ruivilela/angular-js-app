@@ -1,5 +1,13 @@
 export default class CustomerListCtrl {
-  constructor($scope){
+  constructor($scope, $location){
+
+    $scope.editCustomer = () => {
+      $location.url('/customer-details')
+    }
+
+    $scope.goNavigationData = () => {
+      $location.url('/navigation-data')
+    }
 
     $scope.$watch('customers', () => {
       this.customers = Object.assign([],$scope.$ctrl.customers )

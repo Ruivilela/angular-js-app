@@ -1,10 +1,9 @@
-
 <div class="row">
   <div class="col-md-3">
   </div>
   <form class="col-md-6">
     <h2>
-      Customer Overview
+      Customer Details
     </h2>
     <div class="form-group">
       <label> Customer ID </label>
@@ -34,10 +33,10 @@
       <label>Customer Lifetime Value</label>
       <input class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary">
+    <button ng-click="saveDetails()" type="submit" class="btn btn-primary">
       Save
     </button>
-    <button type="submit" class="btn btn-primary">
+    <button ng-click="cancelDetails()" type="submit" class="btn btn-primary">
       Cancel
     </button>
   </form>
