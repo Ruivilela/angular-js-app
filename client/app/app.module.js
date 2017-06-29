@@ -1,8 +1,9 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-import customer from './components/customer';
 import routes from './app.routes';
 
+import customer from './components/customer';
+import navigationData from './components/navigation-data';
 
-angular.module("MyApp", [uirouter, customer])
+angular.module("MyApp", [uirouter, customer, navigationData])
   .config(routes)
