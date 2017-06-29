@@ -1,6 +1,4 @@
-function customerListCtrl() {
-  console.log(this);
-}
+import customerListCtrl from './customer-list.controller.js'; 
 
 module.exports = {
   template: require('./customer-list.html'),
