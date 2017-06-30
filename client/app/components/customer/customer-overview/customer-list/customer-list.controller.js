@@ -1,8 +1,7 @@
 export default class CustomerListCtrl {
-  constructor($scope, $location){
-
-    $scope.editCustomer = () => {
-      $location.url('/customer-details')
+  constructor($scope, $location, $stateParams){
+    $scope.editCustomer = (customerID) => {
+      $location.url('/customer-details/' + customerID)
     }
 
     $scope.goNavigationData = () => {

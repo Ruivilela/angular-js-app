@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="CustomerDetailsCtrl">
   <div class="col-md-3">
   </div>
   <form class="col-md-6">
@@ -7,31 +7,35 @@
     </h2>
     <div class="form-group">
       <label> Customer ID </label>
-      <input class="form-control" readonly>
+      <input class="form-control" placeholder="{{customer.id}}" readonly>
     </div>
     <div class="form-group">
       <label> First Name</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="{{customer.firstName}}">
     </div>
     <div class="form-group">
       <label> Last Name</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="{{customer.lastName}}">
     </div>
     <div class="form-group">
       <label> Birthday</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="{{customer.birthday}}">
     </div>
-    <div class="form-group">
+    <div class="form-group"  ng-if="customer.gender == 'm'">
       <label> Gender</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="Male">
+    </div>
+    <div class="form-group"  ng-if="customer.gender == 'w'">
+      <label> Gender</label>
+      <input class="form-control" placeholder="Female">
     </div>
     <div class="form-group">
       <label>Last Contact</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="{{customer.lastContacted}}">
     </div>
     <div class="form-group">
       <label>Customer Lifetime Value</label>
-      <input class="form-control">
+      <input class="form-control" placeholder="{{customer.value}}">
     </div>
     <button ng-click="saveDetails()" type="submit" class="btn btn-primary">
       Save
