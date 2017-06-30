@@ -36,6 +36,23 @@ export default class NavigationDataCtrl {
           break;
       }
     }
+
+    $scope.sortTimeStamp = () => {
+      switch($scope.timestamporder){
+        case "ascending":
+          $scope.data = $scope.data.sort((a,b) => {
+            return new Date(b.TimeStamp) - new Date(a.TimeStamp)
+          })
+          $scope.timestamporder = "descending";
+          break;
+        default:
+          $scope.data = $scope.data.sort((a,b) => {
+            return new Date(a.TimeStamp) - new Date(b.TimeStamp)
+          })
+          $scope.timestamporder = "ascending";
+          break;
+      }
+    }
   }
 }
 
