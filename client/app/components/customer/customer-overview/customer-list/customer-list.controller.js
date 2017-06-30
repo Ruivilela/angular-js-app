@@ -4,8 +4,8 @@ export default class CustomerListCtrl {
       $location.url('/customer-details/' + customerID)
     }
 
-    $scope.goNavigationData = () => {
-      $location.url('/navigation-data')
+    $scope.goNavigationData = (customerID) => {
+      $location.url('/navigation-data/' + customerID)
     }
 
     $scope.$watch('customers', () => {

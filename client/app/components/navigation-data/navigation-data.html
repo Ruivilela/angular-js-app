@@ -1,4 +1,8 @@
-<div class="row">
+<div
+  class="row"
+  ng-app="MyApp.navigation-data"
+  ng-controller="NavigationDataCtrl"
+>
   <div class="col-md-3">
   </div>
   <div class="col-md-6">
@@ -13,12 +17,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td> teste </td>
-          <td> teste </td>
+        <tr ng-repeat="d in data">
+          <td> {{d.pages}} </td>
+          <td> {{d.TimeStamp}} </td>
         </tr>
       </tbody>
     </table>
-    <button ng-click="backToOverview()" class="btn btn-primary"> Back to Overview </button> 
+    <button ng-click="backToOverview()" class="btn btn-primary"> Back to Overview </button>
   </div>
 </div>
