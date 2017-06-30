@@ -21,5 +21,72 @@ export default class CustomerListCtrl {
           ).getUTCFullYear() - 1970;
       }
     }, true)
+
+    $scope.filterFirstName = () => {
+      switch($scope.fnFilter){
+        case "ascending":
+          this.customers = this.customers.sort(descendingFn);
+          $scope.fnFilter = "descending";
+          break;
+        default:
+          this.customers = this.customers.sort(ascendingFn);
+          $scope.fnFilter = "ascending";
+          break;
+      }
+    }
+
+    $scope.filterLastName = () => {
+      switch($scope.lnFilter){
+        case "ascending":
+          this.customers = this.customers.sort(descendingLn);
+          $scope.lnFilter = "descending";
+          break;
+        default:
+          this.customers = this.customers.sort(ascendingLn);
+          $scope.lnFilter = "ascending";
+          break;
+      }
+    }
   }
+}
+
+// functions --> this needs refractor
+const ascendingFn = (a,b) => {
+  if (a.firstName < b.firstName){
+    return -1;
+  }
+  if (a.firstName > b.firstName){
+    return 1;
+  }
+  return 0;
+}
+
+const descendingFn = (a,b) =>  {
+  if (a.firstName < b.firstName){
+    return 1;
+  }
+  if (a.firstName < b.firstName){
+    return -1;
+  }
+  return 0;
+}
+
+const ascendingLn = (a,b) =>  {
+  if (a.lastName < b.lastName){
+    return -1;
+  }
+  if (a.lastName > b.lastName){
+    return 1;
+  }
+  return 0;
+}
+
+const descendingLn = (a,b) =>  {
+  if (a.lastName < b.lastName){
+    return 1;
+  }
+  if (a.lastName > b.lastName){
+    return -1;
+  }
+  return 0;
 }
