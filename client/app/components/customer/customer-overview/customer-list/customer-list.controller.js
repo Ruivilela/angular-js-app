@@ -1,5 +1,5 @@
 export default class CustomerListCtrl {
-  constructor($scope, $location, $stateParams){
+  constructor($scope, $location, $stateParams, $http){
     $scope.editCustomer = (customerID) => {
       $location.url('/customer-details/' + customerID)
     }
@@ -46,6 +46,13 @@ export default class CustomerListCtrl {
           $scope.lnFilter = "ascending";
           break;
       }
+    }
+
+    $scope.deleteCustomer = (customerID, index) => {
+      this.customers.splice(index, 1);
+      $http.delete(
+        'http://localhost:8000/api/Customers/' + customerID
+      )
     }
   }
 }

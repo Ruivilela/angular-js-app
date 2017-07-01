@@ -11,33 +11,37 @@
     </div>
     <div class="form-group">
       <label> First Name</label>
-      <input class="form-control" placeholder="{{customer.firstName}}">
+      <input ng-model="inputFN" class="form-control" placeholder="{{customer.firstName}}">
     </div>
     <div class="form-group">
       <label> Last Name</label>
-      <input class="form-control" placeholder="{{customer.lastName}}">
+      <input ng-model="inputLN" class="form-control" placeholder="{{customer.lastName}}">
     </div>
     <div class="form-group">
       <label> Birthday</label>
-      <input class="form-control" placeholder="{{customer.birthday}}">
+      <input ng-model="inputBirthday" class="form-control" placeholder="{{customer.birthday}}">
     </div>
     <div class="form-group"  ng-if="customer.gender == 'm'">
       <label> Gender</label>
-      <input class="form-control" placeholder="Male">
+      <input ng-model="inputGender" class="form-control" placeholder="Male">
     </div>
     <div class="form-group"  ng-if="customer.gender == 'w'">
       <label> Gender</label>
-      <input class="form-control" placeholder="Female">
+      <input ng-model="inputGender" class="form-control" placeholder="Female">
     </div>
     <div class="form-group">
       <label>Last Contact</label>
-      <input class="form-control" placeholder="{{customer.lastContacted}}">
+      <input ng-model="inputLastContacted"  class="form-control" placeholder="{{customer.lastContacted}}">
     </div>
     <div class="form-group">
       <label>Customer Lifetime Value</label>
-      <input class="form-control" placeholder="{{customer.value}}">
+      <input ng-model="inputValue" class="form-control" placeholder="{{customer.value}}">
     </div>
-    <button ng-click="saveDetails()" type="submit" class="btn btn-primary">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      ng-click="saveDetails(inputFN,inputLN,inputBirthday,inputGender,inputLastContacted,inputValue)"
+    >
       Save
     </button>
     <button ng-click="cancelDetails()" type="submit" class="btn btn-primary">
