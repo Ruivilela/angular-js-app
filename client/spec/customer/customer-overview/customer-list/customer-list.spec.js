@@ -11,24 +11,25 @@ describe('Customer-Overview', () => {
     $controller(CustomerListCtrl, {$scope: $scope})
   }))
 
-  // controller spec to see if the properties are being instanciated
-  it('Controller has editCustomer as property', () => {
-    expect($scope).toHaveProperties("editCustomer");
-  });
+  describe('CustomerListCtrl', () => {
+    it('Controller has editCustomer as property', () => {
+      expect($scope).toHaveProperties("editCustomer");
+    });
 
-  it('Controller has goNavigationData as property', () => {
-    expect($scope).toHaveProperties("goNavigationData");
-  });
+    it('Controller has goNavigationData as property', () => {
+      expect($scope).toHaveProperties("goNavigationData");
+    });
 
-  it('Controller has filterFirstName  as property', () => {
-    expect($scope).toHaveProperties("filterFirstName");
-  });
+    it('Controller has filterFirstName  as property', () => {
+      expect($scope).toHaveProperties("filterFirstName");
+    });
 
-  it('Controller has filterFirstName  as property', () => {
-    expect($scope).toHaveProperties("filterLastName");
-  });
+    it('Controller has filterFirstName  as property', () => {
+      expect($scope).toHaveProperties("filterLastName");
+    });
 
-  it('Controller has deleteCustomer  as property', () => {
-    expect($scope).toHaveProperties("deleteCustomer");
-  });
+    it('Controller has deleteCustomer  as property', () => {
+      expect($scope).toHaveProperties("deleteCustomer");
+    });
+  })
 })

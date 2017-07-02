@@ -11,11 +11,14 @@ describe('Customers', () => {
     $controller(CustomerCtrl, {$scope: $scope})
   }))
 
-  it('Controller has getCustomer as property', () => {
-    expect($scope).toHaveProperties("getCustomer");
-  });
+  describe('Customer controller', () => {
+    it('Controller has getCustomer as property', () => {
+      expect($scope).toHaveProperties("getCustomer");
+    });
 
-  it('getCustomer returns a Promise', () => {
-    expect($scope.getCustomer().then).not.toBeUndefined();
-  });
+    it('getCustomer returns a Promise', () => {
+      expect($scope.getCustomer().then).not.toBeUndefined();
+    });
+  })
+
 })

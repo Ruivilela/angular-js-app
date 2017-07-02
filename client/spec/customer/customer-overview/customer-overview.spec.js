@@ -11,7 +11,9 @@ describe('Customer-Overview', () => {
     $controller(CustomerOverviewCtrl, {$scope: $scope})
   }))
 
-  it('Controller has redirectCustomerDetail as property', () => {
-    expect($scope).toHaveProperties("redirectCustomerDetail");
-  });
+  describe('CustomerOverviewCtrl', () => {
+    it('Controller has redirectCustomerDetail as property', () => {
+      expect($scope).toHaveProperties("redirectCustomerDetail");
+    });
+  })
 })

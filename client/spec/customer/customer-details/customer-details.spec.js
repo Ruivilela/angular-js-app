@@ -12,11 +12,13 @@ describe('Customer-Overview', () => {
     $controller(CustomerDetailsCtrl, {$scope: $scope})
   }))
 
-  it('Controller has saveDetails as property', () => {
-    expect($scope).toHaveProperties("saveDetails");
-  });
+  describe('CustomerDetailsCtrl', () => {
+    it('Controller has saveDetails as property', () => {
+      expect($scope).toHaveProperties("saveDetails");
+    });
 
-  it('Controller has cancelDetails as property', () => {
-    expect($scope).toHaveProperties("cancelDetails");
-  });
+    it('Controller has cancelDetails as property', () => {
+      expect($scope).toHaveProperties("cancelDetails");
+    });
+  })
 })
