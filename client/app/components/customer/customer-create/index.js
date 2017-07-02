@@ -7,4 +7,4 @@ export default angular.module(
   'customer.customer-create',
   [uirouter])
   .config(routes)
-  .name; 
+  .name;

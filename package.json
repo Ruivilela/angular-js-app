@@ -5,13 +5,15 @@
   "main": "./client/app/app.module.js",
   "scripts": {
     "start": "concurrently 'lite-server' 'webpack --watch'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "author": "Rui Vilela",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^1.0.3",
+    "angularjs-datepicker": "^2.1.23",
     "webpack": "^3.0.0"
   },
   "devDependencies": {
