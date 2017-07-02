@@ -21,13 +21,16 @@
       <label> Birthday</label>
       <input ng-model="inputBirthday" class="form-control" placeholder="{{customer.birthday}}">
     </div>
-    <div class="form-group"  ng-if="customer.gender == 'm'">
+    <div class="form-group">
       <label> Gender</label>
-      <input ng-model="inputGender" class="form-control" placeholder="Male">
-    </div>
-    <div class="form-group"  ng-if="customer.gender == 'w'">
-      <label> Gender</label>
-      <input ng-model="inputGender" class="form-control" placeholder="Female">
+      <select
+        class="form-control"
+        ng-model="inputGender"
+        ng-init="inputGender = customer.gender == 'm' ? 'm': 'f'"
+      >
+        <option value="m"> Male </option>
+        <option value="f"> Female </option>
+      </select>
     </div>
     <div class="form-group">
       <label>Last Contact</label>
