@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   entry: "./client/app/app.module.js",
   output: {
@@ -9,6 +11,10 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
+            include: [
+              path.join(__dirname, 'client/app'),
+              path.join(__dirname, 'client/spec')
+            ]
         },
         { test: /\.html$/, loader: "html-loader" },
         { test: /\.css$/, loader: "style!css" }
