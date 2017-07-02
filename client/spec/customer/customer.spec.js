@@ -1,22 +1,17 @@
-require('to-have-property')
-
-import angular from 'angular';
-import mocks from 'angular-mocks';
-
-import CustomerModule from './../../app/components/customer/index.js';
-import CustomerCtrl from './../../app/components/customer/customer.controller.js';
+import CustomerModule from '~/client/app/components/customer/index.js';
+import CustomerCtrl from '~/client/app/components/customer/customer.controller.js';
 
 describe('Customers', () => {
   let $scope;
 
-  beforeEach(angular.mock.module("MyApp.customer"));
+  beforeEach(window.module("MyApp.customer"));
 
   beforeEach(inject(($rootScope, $controller) => {
     $scope = $rootScope.$new();
     $controller(CustomerCtrl, {$scope: $scope})
   }))
 
-  it('After Controller created, getCustomer props exists', () => {
+  it('Controller has getCustomer as property', () => {
     expect($scope).toHaveProperties("getCustomer");
   });
 

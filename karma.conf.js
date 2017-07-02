@@ -15,9 +15,7 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      'client/spec/**/*.spec.js'
-    ],
+    files: [{ pattern: 'spec.bundle.js', watched: false }],
 
 
     // list of files to exclude
@@ -37,7 +35,8 @@ module.exports = function(config) {
                 loader: 'babel-loader',
                 include: [
                   path.join(__dirname, 'client/app'),
-                  path.join(__dirname, 'client/spec')
+                  path.join(__dirname, 'client/spec'),
+                  path.join(__dirname, 'spec.bundle.js')
                 ]
             },
             { test: /\.html$/, loader: "html-loader" },
@@ -85,7 +84,8 @@ module.exports = function(config) {
 
     preprocessors: {
       'client/app/**/*.js': ["webpack", "sourcemap"],
-      'client/spec/**/*.js': ["webpack", "sourcemap"]
+      'client/spec/**/*.js': ["webpack", "sourcemap"],
+      'spec.bundle.js': ["webpack", "sourcemap"]
     },
 
     babelPreprocessor: {
