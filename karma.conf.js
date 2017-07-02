@@ -45,39 +45,6 @@ module.exports = function(config) {
       }
     },
 
-    // plugins: [
-    //   require("karma-browserify"),
-    //   require("karma-babel-preprocessor"),
-    //   require("karma-jasmine"),
-    //   require("karma-chai"),
-    //   require("karma-chrome-launcher"),
-    //   require("karma-mocha"),
-    //   require("karma-mocha-reporter"),
-    //   require("karma-sourcemap-loader"),
-    //   require("karma-webpack")
-    // ],
-
-
-    // // preprocess matching files before serving them to the browser
-    // // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    // preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap'] },
-    //
-    // webpack: {
-    //   devtool: 'inline-source-map',
-    //   module: {
-    //     loaders: [
-    //       { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel-loader' },
-    //       { test: /\.html/, loader: 'raw' },
-    //       { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-    //       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-    //       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-    //       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
-    //       { test: /\.(sass|scss)$/, loader: 'style!css!sass?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')},
-    //       { test: /\.css$/, loader: 'style!css' }
-    //     ]
-    //   }
-    // },
-
     webpackServer: {
       noInfo: true // prevent console spamming when running in Karma!
     },
@@ -86,19 +53,6 @@ module.exports = function(config) {
       'client/app/**/*.js': ["webpack", "sourcemap"],
       'client/spec/**/*.js': ["webpack", "sourcemap"],
       'spec.bundle.js': ["webpack", "sourcemap"]
-    },
-
-    babelPreprocessor: {
-      options: {
-        presets: ['es2015'],
-        sourceMap: 'inline'
-      },
-      filename: function (file) {
-        return file.originalPath.replace(/\.js$/, '.es5.js');
-      },
-      sourceFileName: function (file) {
-        return file.originalPath;
-      }
     },
 
     // test results reporter to use

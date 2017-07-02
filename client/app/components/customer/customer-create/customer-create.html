@@ -7,16 +7,38 @@
     </h2>
     <div class="form-group">
       <label> First Name</label>
-      <input ng-model="inputFN" class="form-control">
+      <input
+        ng-model="inputFN"
+        class="form-control"
+      >
     </div>
     <div class="form-group">
       <label> Last Name</label>
-      <input ng-model="inputLN" class="form-control">
+      <input
+        ng-model="inputLN"
+        class="form-control"
+      >
     </div>
     <div class="form-group">
       <label> Birthday</label>
-      <datepicker date-format="yyyy-MM-dd">
-        <input class="form-control" ng-model="inputBirthday" type="text"/>
+      <datepicker
+        date-format="yyyy-MM-dd"
+        selector="form-control"
+      >
+        <div class="input-group">
+          <input
+            class="form-control"
+            ng-model="inputBirthday"
+            type="text"
+          />
+          <span
+            class="input-group-addon"
+            style="cursor: pointer"
+          >
+            <i class="fa fa-lg fa-calendar">
+            </i>
+          </span>
+        </div>
       </datepicker>
     </div>
     <div class="form-group" >
@@ -32,12 +54,24 @@
     </div>
     <div class="form-group">
       <label>Last Contact</label>
-      <datepicker date-format="yyyy-MM-dd">
-        <input
-          class="form-control"
-          ng-model="inputLastContacted"
-          type="text"
-        />
+      <datepicker
+        date-format="yyyy-MM-dd"
+        selector="form-control"
+      >
+        <div class="input-group">
+          <input
+            class="form-control"
+            ng-model="inputLastContacted"
+            type="text"
+          />
+          <span
+            class="input-group-addon"
+            style="cursor: pointer"
+          >
+            <i class="fa fa-lg fa-calendar">
+            </i>
+          </span>
+        </div>
       </datepicker>
     </div>
     <div class="form-group">
@@ -55,7 +89,11 @@
     >
       Save
     </button>
-    <button ng-click="cancelCreate()" type="submit" class="btn btn-primary">
+    <button
+      ng-click="cancelCreate()"
+      type="submit"
+      class="btn btn-primary"
+    >
       Cancel
     </button>
   </form>
